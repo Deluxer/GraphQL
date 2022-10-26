@@ -1,0 +1,86 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  fullName: String!
+  email: String!
+  password: String!
+  roles: [validRoles!]!
+  isActive: Boolean!
+  updatedBy: User
+  items: [Item!]!
+  itemCount: Int!
+}
+
+"""Rol allowed"""
+enum validRoles {
+  admin
+  user
+  superUser
+}
+
+type Item {
+  id: ID!
+  name: String!
+  quantityUnits: String
+  user: User!
+}
+
+type AuthResponse {
+  token: String!
+  user: User!
+}
+
+type Query {
+  revalidate: AuthResponse!
+  users(roles: [validRoles!] = []): [User!]!
+  user(id: ID!): User!
+  items: [Item!]!
+  item(id: ID!): Item!
+}
+
+type Mutation {
+  signup(signupInput: SignUpInputDto!): AuthResponse!
+  login(loginInput: LoginInputDto!): AuthResponse!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  blockUser(id: ID!): User!
+  createItem(createItemInput: CreateItemInput!): Item!
+  updateItem(updateItemInput: UpdateItemInput!): Item!
+  removeItem(id: String!): Item!
+
+  """Population database"""
+  executeSeed: Boolean!
+}
+
+input SignUpInputDto {
+  email: String!
+  fullName: String!
+  password: String!
+}
+
+input LoginInputDto {
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  email: String
+  fullName: String
+  password: String
+  id: String!
+  roles: [validRoles!]
+  isActive: Boolean
+}
+
+input CreateItemInput {
+  name: String!
+  quantityUnits: String
+}
+
+input UpdateItemInput {
+  name: String
+  quantityUnits: String
+  id: ID!
+}
