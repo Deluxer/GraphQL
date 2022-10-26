@@ -4,6 +4,15 @@
 </p>
 
 
+## Create users en register items with GraphQL
+
+Implement GraphQL with Nestjs to register users using ApolloGraph and security conexion with JWT
+
+Requirements
+- Node 18
+- Postgres
+- Docker
+
 # Dev
 
 1. Clone repo
