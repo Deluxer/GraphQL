@@ -8,6 +8,7 @@ import { UpdateUserInput } from './dto/update-user.input';
 import { User } from './entities/user.entity';
 import { ValidRoles } from 'src/auth/enums/valid-roles.enum';
 import { ValidRolesArgs } from './dto/args/roles.arg';
+import { List } from 'src/list/entities/list.entity';
 
 @Injectable()
 export class UsersService {
@@ -84,11 +85,11 @@ export class UsersService {
 
   async findById(id: string ): Promise<User> {
     try {
-        return await this.userRepository.findOneByOrFail({id})
-      } catch (error) {
-        throw new  NotFoundException(`Error, The ${ id } not found`)
-      }
-}
+      return await this.userRepository.findOneByOrFail({id})
+    } catch (error) {
+      throw new  NotFoundException(`Error, The ${ id } not found`)
+    }
+  }
   
   private handleDBErros(error: any): never {
     this.logger.error( error );

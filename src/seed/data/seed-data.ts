@@ -1,75 +1,82 @@
 export const SEED_USERS = [
     {
-        fullName: 'Fernando Herrera',
-        email: 'fernando@google.com',
+        fullName: 'Test One',
+        email: 'test1@test.com',
         password: '123456',
         roles: ['admin','superUser','user'],
         isActive: true
     },
     {
-        fullName: 'Melissa Flores',
-        email: 'melissa@google.com',
+        fullName: 'test two',
+        email: 'test1@test.com',
         password: '123456',
         roles: ['user'],
         isActive: true
     },
     {
-        fullName: 'Hernando Vallejo',
-        email: 'hernando@google.com',
+        fullName: 'Test three',
+        email: 'test3@test.com',
         password: '123456',
         roles: ['user'],
         isActive: false
     },
 ]
 
+export const SEED_LISTS = [
+    { name: 'Electronic'},
+    { name: 'Pharmacy'},
+    { name: 'Candy store'},
+
+]
+
 export const SEED_ITEMS = [
     {
-        name: "Chicken breast (skinless,boneless)",
+        name: "Beef",
         quantityUnits: "lb",
         category: "meat"
     },
     {
-        name: "Chicken thighs (skinless,boneless)",
+        name: "Toy",
         quantityUnits: "box",
         category: "meat"
     },
     {
-        name: "Fish filets",
+        name: "Fish",
         quantityUnits: "unit",
         category: "meat"
     },
     {
-        name: "Ground turkey or chicken",
+        name: "Rice",
         quantityUnits: "lb",
         category: "meat"
     },
     {
-        name: "Lean ground beef",
+        name: "Soup",
         quantityUnits: "pound",
         category: "meat"
     },
     {
-        name: "Veggie burgers",
+        name: "Saladd",
         quantityUnits: "box",
         category: "meat"
     },
     {
-        name: "Chicken breast (skinless,boneless)",
+        name: "Hamburguer",
         quantityUnits: "unit",
         category: "meat"
     },
     {
-        name: "Chicken thighs (skinless,boneless)",
+        name: "Pizza",
         quantityUnits: "box",
         category: "meat"
     },
     {
-        name: "Chicken salad (made with lower calorie mayo)",
+        name: "Postre",
         quantityUnits: null,
         category: "meat"
     },
     {
-        name: "Tuna salad (made with lower calorie mayo)",
+        name: "Tuna salad",
         quantityUnits: null,
         category: "meat"
     },
