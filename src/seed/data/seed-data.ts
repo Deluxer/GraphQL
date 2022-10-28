@@ -8,7 +8,7 @@ export const SEED_USERS = [
     },
     {
         fullName: 'test two',
-        email: 'test1@test.com',
+        email: 'test2@test.com',
         password: '123456',
         roles: ['user'],
         isActive: true

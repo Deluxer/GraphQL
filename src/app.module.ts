@@ -56,8 +56,8 @@ import { ListItemModule } from './list-item/list-item.module';
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       username: process.env.DB_USERNAME,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DB,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: [],
       synchronize: true,
       autoLoadEntities: true
@@ -73,4 +73,13 @@ import { ListItemModule } from './list-item/list-item.module';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+
+  constructor() {
+    console.log('host', process.env.DB_HOST);
+    console.log('port', +process.env.DB_PORT);
+    console.log('username', process.env.DB_USERNAME);
+    console.log('password', process.env.DB_PASSWORD);
+    console.log('database', process.env.DB_NAME);
+  }
+}

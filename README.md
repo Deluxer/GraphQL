@@ -34,3 +34,10 @@ yarn start:dev
   http://localhost:3000/graphql
 ```
 7. Execute __Mutation__ executeSeed to populate database.
+
+# Prod
+
+Start project
+```
+docker-compose -f docker-compose.dev.yaml --env-file .env.dev up --build
+```
