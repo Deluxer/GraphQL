@@ -1,12 +1,17 @@
 import { Resolver, Query, Mutation, Args, Int, ID, ResolveField } from '@nestjs/graphql';
-import { ItemsService } from './items.service';
-import { Item } from './entities/item.entity';
-import { CreateItemInput, UpdateItemInput } from './dto/inputs';
 import { ParseUUIDPipe, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { CurrentUser } from 'src/auth/decoratos/current-user.decorator';
-import { User } from 'src/users/entities/user.entity';
+
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+
+import { User } from '../users/entities/user.entity';
+import { Item } from './entities/item.entity';
+
+import { ItemsService } from './items.service';
+
 import { PaginationArgs, SearchArgs } from 'src/common/dto/args';
+import { CreateItemInput, UpdateItemInput } from './dto/inputs';
+import { CurrentUser } from '../auth/decoratos/current-user.decorator';
+
 
 @Resolver(() => Item)
 @UseGuards( JwtAuthGuard )

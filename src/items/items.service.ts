@@ -1,12 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { userInfo } from 'os';
-import { NotFoundError } from 'rxjs';
-import { SearchArgs, PaginationArgs } from 'src/common/dto/args';
-import { User } from 'src/users/entities/user.entity';
-import { Like, Repository } from 'typeorm';
-import { CreateItemInput, UpdateItemInput } from './dto/inputs';
+
+import { Repository } from 'typeorm';
+
 import { Item } from './entities/item.entity';
+import { User } from '../users/entities/user.entity';
+
+import { SearchArgs, PaginationArgs } from '../common/dto/args';
+import { CreateItemInput, UpdateItemInput } from './dto/inputs';
+
 
 @Injectable()
 export class ItemsService {

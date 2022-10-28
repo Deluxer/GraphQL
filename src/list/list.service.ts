@@ -4,12 +4,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { List } from './entities/list.entity';
-import { User } from 'src/users/entities/user.entity';
+import { User } from '../users/entities/user.entity';
 
 import { CreateListInput } from './dto/create-list.input';
 import { UpdateListInput } from './dto/update-list.input';
-import { PaginationArgs, SearchArgs } from 'src/common/dto/args';
-import { skip } from 'rxjs';
+import { PaginationArgs, SearchArgs } from '../common/dto/args';
 
 @Injectable()
 export class ListService {

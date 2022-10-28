@@ -1,11 +1,15 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PaginationArgs, SearchArgs } from 'src/common/dto/args';
-import { List } from 'src/list/entities/list.entity';
+
 import { Repository } from 'typeorm';
+
+import { ListItem } from './entities/list-item.entity';
+
+import { PaginationArgs, SearchArgs } from '../common/dto/args';
+import { List } from '../list/entities/list.entity';
+
 import { CreateListItemInput } from './dto/create-list-item.input';
 import { UpdateListItemInput } from './dto/update-list-item.input';
-import { ListItem } from './entities/list-item.entity';
 
 @Injectable()
 export class ListItemService {

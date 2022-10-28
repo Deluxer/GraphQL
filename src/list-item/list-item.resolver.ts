@@ -1,13 +1,16 @@
 import { Resolver, Query, Mutation, Args, Int, ID } from '@nestjs/graphql';
-import { ListItemService } from './list-item.service';
+import { ParseUUIDPipe, UseGuards } from '@nestjs/common';
+
 import { ListItem } from './entities/list-item.entity';
+import { User } from '../users/entities/user.entity';
+import { ListItemService } from './list-item.service';
+
 import { CreateListItemInput } from './dto/create-list-item.input';
 import { UpdateListItemInput } from './dto/update-list-item.input';
-import { ParseUUIDPipe, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { CurrentUser } from 'src/auth/decoratos/current-user.decorator';
-import { ValidRoles } from 'src/auth/enums/valid-roles.enum';
-import { User } from 'src/users/entities/user.entity';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { CurrentUser } from '../auth/decoratos/current-user.decorator';
+import { ValidRoles } from '../auth/enums/valid-roles.enum';
+
 
 @Resolver(() => ListItem)
 @UseGuards( JwtAuthGuard )

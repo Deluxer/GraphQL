@@ -1,13 +1,13 @@
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 
-import { ItemsModule } from 'src/items/items.module';
-import { UsersModule } from 'src/users/users.module';
+import { ItemsModule } from '../items/items.module';
+import { UsersModule } from '../users/users.module';
+import { ListModule } from '../list/list.module';
+import { ListItemModule } from '../list-item/list-item.module';
 
-import { SeedService } from './seed.service';
 import { SeedResolver } from './seed.resolver';
-import { ListItemModule } from 'src/list-item/list-item.module';
-import { ListModule } from 'src/list/list.module';
+import { SeedService } from './seed.service';
 
 @Module({
   providers: [SeedResolver, SeedService],

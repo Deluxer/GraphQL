@@ -1,5 +1,5 @@
-import { InputType, Int, Field, ID } from '@nestjs/graphql';
-import { IsBoolean, IsNumber, isNumber, IsOptional, IsUUID, Min } from 'class-validator';
+import { InputType, Field, ID } from '@nestjs/graphql';
+import { IsBoolean, IsNumber, IsOptional, IsUUID, Min } from 'class-validator';
 
 @InputType()
 export class CreateListItemInput {

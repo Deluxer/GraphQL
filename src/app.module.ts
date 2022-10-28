@@ -1,11 +1,13 @@
-import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ApolloDriver } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
+import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { JwtService } from '@nestjs/jwt';
+import { Module } from '@nestjs/common';
+
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { join } from 'path';
+
 import { ItemsModule } from './items/items.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';

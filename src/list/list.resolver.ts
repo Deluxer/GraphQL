@@ -10,10 +10,9 @@ import { List } from './entities/list.entity';
 import { User } from '../users/entities/user.entity';
 
 import { CreateListInput, UpdateListInput } from './dto';
-import { ListItem } from 'src/list-item/entities/list-item.entity';
-import { ListItemService } from 'src/list-item/list-item.service';
-import { Item } from 'src/items/entities/item.entity';
-import { ItemsService } from 'src/items/items.service';
+import { ListItem } from '../list-item/entities/list-item.entity';
+import { ListItemService } from '../list-item/list-item.service';
+import { ItemsService } from '../items/items.service';
 
 @Resolver(() => List)
 @UseGuards(JwtAuthGuard)
